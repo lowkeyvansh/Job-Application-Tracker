@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Add Application</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('add_application') }}" method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.company_name.label }}<br>
+                {{ form.company_name }}
+            </div>
+            <div>
+                {{ form.job_title.label }}<br>
+                {{ form.job_title }}
+            </div>
+            <div>
+                {{ form.date_applied.label }}<br>
+                {{ form.date_applied }}
+            </div>
+            <div>
+                {{ form.status.label }}<br>
+                {{ form.status }}
+            </div>
+            <div>
+                {{ form.notes.label }}<br>
+                {{ form.notes }}
+            </div>
+            <div>
+                {{ form.submit }}
+            </div>
+        </form>
+    </main>
+</body>
+</html>
